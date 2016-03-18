@@ -1,0 +1,6 @@
+extends ./layouts/default.jade
+
+block content
+    form(action="/user/new", method="POST")
+        input(name="username")
+        button(type="submit") Add new user 

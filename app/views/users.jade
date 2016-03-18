@@ -1,0 +1,15 @@
+extends ./layouts/default.jade
+
+block content
+    div 
+        h1 list of users
+        ul
+            each user in users
+                li
+                    a(href="user/#{user._id}") #{user.username}
+                    form(action="user/#{user._id}", method="POST")
+                        input(type="hidden", name="_method", value="delete")
+                        button(type="submit") Delete user 
+                    hr
+    div
+        include ./new_user
